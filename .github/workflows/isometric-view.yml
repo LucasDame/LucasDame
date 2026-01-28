@@ -12,7 +12,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filename: assets/github-metrics.svg
-          config_theme: night-rainbow
+          config_theme: radical
           
           # On désactive la carte "classique" pour ne garder que la 3D
           base: header, activity, languages, footer
