@@ -1,11 +1,9 @@
-name: Full Profile Metrics
-
+name: Isometric Copy
 on:
   schedule: [{cron: "0 0 * * *"}]
   workflow_dispatch:
-
 jobs:
-  github-metrics:
+  metrics:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -13,19 +11,12 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          filename: assets/github-metrics.svg
           
-          # Nom du fichier final
-          filename: github-metrics.svg
-
-          # 1. LA BASE (Ce que tu voulais !)
-          # Affiche l'entête, l'activité, la communauté, etc.
-          base: header, activity, community, repositories, metadata
+          # On désactive la carte "classique" pour ne garder que la 3D
+          base: ""
           
-          # 2. LE STYLE
-          # "radical" est très populaire (noir/rouge/néon). 
-          # Tu peux changer par : dracula, onedark, cobalt, etc.
-          config_theme: radical
-          
-          # 3. LE GRAPHIQUE 3D (Isométrique)
+          # Configuration du plugin Isométrique
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
+          plugin_isocalendar_duration: half-year # Pour avoir 6 mois
+          plugin_isocalendar_style: night-rainbow

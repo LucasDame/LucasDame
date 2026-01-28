@@ -1,3 +1,5 @@
 ## Hi there 👋
 
-![Isometric Contributions](./github-metrics.svg)
+![banner](./assets/banner.png)
+
+![Isometric Contributions](./assets/github-metrics.svg)
