@@ -1,18 +1,30 @@
-name: Isometric Metrics
+name: Isometric Contributions
+
 on:
-  schedule: [{cron: "0 0 * * *"}]
+  # S'exécute automatiquement tous les jours à minuit
+  schedule:
+    - cron: "0 0 * * *"
+  # Permet de le lancer manuellement via le bouton "Run workflow"
   workflow_dispatch:
+
 jobs:
-  github-metrics:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    
     steps:
       - uses: lowlighter/metrics@latest
         with:
+          # Le token magique
           token: ${{ secrets.GITHUB_TOKEN }}
-          filename: github-metrics.svg # Nom du fichier généré
+          
+          # Nom du fichier image qui sera créé
+          filename: isometric.svg
+          
+          # On désactive les stats de base pour n'avoir QUE le graphique 3D
           base: ""
+          
+          # Activation du plugin isométrique
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
-          config_timezone: Europe/Paris # Optionnel : pour être à l'heure française
