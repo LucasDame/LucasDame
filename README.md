@@ -1,3 +1,3 @@
 ## Hi there 👋
 
-![Isometric Contributions](./profile-3d-contrib/profile-night-rainbow.svg)
+![Isometric Contributions](./github-metrics.svg)
