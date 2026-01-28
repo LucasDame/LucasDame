@@ -12,9 +12,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           filename: assets/github-metrics.svg
+          config_theme: night-rainbow
           
           # On désactive la carte "classique" pour ne garder que la 3D
-          base: ""
+          base: header, activity, languages, footer
           
           # Configuration du plugin Isométrique
           plugin_isocalendar: yes
