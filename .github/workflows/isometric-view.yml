@@ -1,6 +1,6 @@
 name: Isometric Metrics
 on:
-  schedule: [{cron: "0 0 * * *"}] # Une fois par jour
+  schedule: [{cron: "0 0 * * *"}]
   workflow_dispatch:
 jobs:
   github-metrics:
@@ -11,6 +11,8 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          base: "" # On ne veut que le graphique
+          filename: github-metrics.svg # Nom du fichier généré
+          base: ""
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year # Affiche 6 mois
+          plugin_isocalendar_duration: half-year
+          config_timezone: Europe/Paris # Optionnel : pour être à l'heure française
