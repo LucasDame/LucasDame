@@ -15,9 +15,11 @@ jobs:
           config_theme: radical
           
           # On désactive la carte "classique" pour ne garder que la 3D
-          base: header, activity, languages, footer
+          base: ""
           
           # Configuration du plugin Isométrique
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year # Pour avoir 6 mois
           plugin_isocalendar_style: night-rainbow
+          plugin_isocalendar_cell_size: 12
+          plugin_isocalendar_cell_spacing: 3
